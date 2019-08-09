@@ -55,15 +55,11 @@ class EventComments extends React.Component {
 
   isAttending(){
     if (this.props.me) {
-      if ( (this.props.attendees.map(attendee => attendee._id).includes(this.props.me)) ||
+      if ((this.props.attendees.map(attendee => attendee._id).includes(this.props.me)) ||
           ( this.props.me === this.props.host._id.toString()))
         return true
     }
   }
-
-  // componentDidMount() {
-  //   this.isAttending()
-  // }
 
   render() {
     if (!this.props.event || !this.props.attendees || !this.props.me) return null
