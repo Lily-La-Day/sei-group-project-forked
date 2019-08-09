@@ -36,7 +36,9 @@ img {
   width: 550px;
   height: 400px;
   margin: 0 auto;
-  top: 100px;
+display: flex;
+bottom: 3em;
+top: 2em;
 }
 
 .marker {
@@ -560,7 +562,34 @@ margin: 5px;
   margin: auto;
 }
 
+
+div.css-2b097c-container {
+  margin-top: 0;
+}
+
+.css-2b097c-container {
+  div {
+    margin-top: 0;
+  }
+  input[type="text"] {
+    height: 0;
+  }
+}
+
+.css-1uccc91-singleValue {
+    position: relative;
+  }
+
+
 // Create Event Form
+.eventForm {
+  .css-1hwfws3 {
+    height: 1.2em;
+  }
+  .css-1uccc91-singleValue {
+    position: relative;
+  }
+}
 
 .react-calendar {
   margin: auto;
@@ -633,8 +662,8 @@ border: solid #483D8B;
 }
 
 input, textarea, select, fieldset {
-    margin-bottom: 1.5rem;
-    margin-top: 5px;
+    // margin-bottom: 1.5rem;
+    // margin-top: 5px;
     width: 100%;
 }
 

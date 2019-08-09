@@ -88,10 +88,9 @@ class eventShow extends React.Component {
     axios.put(`/api/events/${this.state.event._id}`, data , {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
+      .then(() => this.getData())
       .catch(err => console.log(err))
-    this.getData()
   }
-
 
   render() {
     if (!this.state.event || !this.state.attendees ) return null

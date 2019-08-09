@@ -74,10 +74,9 @@ class UserProfile extends React.Component {
     axios.put(`/api/users/${this.state.user._id}`, data , {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
-
-      .then(() => this.props.history.push('/myprofile'))
+      .then(() => this.getData())
       .catch(err => console.log(err))
-    this.getData()
+
   }
 
   render(){

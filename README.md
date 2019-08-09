@@ -21,8 +21,8 @@ A git repository on Github
 This Readme!
 
 ## Team
-Ola - [leealex88 · GitHub](https://github.com/leealex88)
 Lily - [Lily-La-Day · GitHub](https://github.com/Lily-La-Day) (me)
+Ola - [leealex88 · GitHub](https://github.com/leealex88)
 Charles - [CPrich905 · GitHub](https://github.com/CPrich905)
 
 ---
@@ -65,17 +65,13 @@ With our initial idea in place, we began by story-boarding our user journey and 
 ## User story
 Our homepage is simple - a background image with the name of our site clearly displayed. A mouse click on the page reveals the options to login or register a new user:
 
-[image:5775B09D-144F-48CD-84F9-B25BBE20834B-7734-00001D2191E7A54F/AE257F11-6E2B-4EDB-82DD-52E34260CC22.png]
-(img 1: homepage showing Register and Login options)
-
 The registration asks for a unique username, a password & confirmation, email address and a brief bio. Once these details are entered, the user is taken to the login page, then to the index of events.
 
 On choosing an event, the user is taken to the initial event card. Here they can see the owner,  the location (by London Borough), users attending, and have the option to request to attend the event. When this request is approved by the event owner, the user will also be able to see the private data around the event and the message board between attendees.
 
 From the Navbar, the user can choose the following options: Events,  Create Event, My Profile, All Users or Logout.
 
-[image:A7BDD180-B2A1-4CF8-95F0-598DE0500162-7734-000032761D0CDC98/DC4E317A-9093-42C3-8001-F9AAE99E6F5B.png]
-(img 2: Navbar)
+
 
 *Stranger Things* Takes the user to the index of events.
 
