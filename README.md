@@ -120,7 +120,7 @@ const attendeeSchema = new mongoose.Schema({
 
 was an option.
 
-Instead I added an "Events" field to the User model instead and then when users were accepted:
+Instead I added an "Events" field to the User model and then when users were accepted:
 
 
 ```js
