@@ -82,7 +82,7 @@ They can also:
 
 ### The Process
 
-I was responsible for the majority of the backend and most of the frontend components other than those that made up the create event form while my team mates concentrated on the (very large and complicated) form, the styling and thorough testing.
+I was responsible for the majority of the backend and most of the frontend components other than those that made up the create event form while my team mates concentrated on the (very large and complicated) event create form, the styling and thorough testing.
 
 ### The Backend
 
@@ -94,7 +94,7 @@ While I usually love a good function, creating the one used to achieve this was 
 
 Just a little snapshot:
 
-<th><p align="center"><img src="src/assets/boroughs.png" width="700"></p></th>
+<th><p align="center"><img src="src/assets/boroughs.png" width="250"></p></th>
 
 
 I realised afterwards that there hadn't been the need for such a degree of precision as I had thought, where I used this method to extract the LngLat for MapBox:
