@@ -217,25 +217,24 @@ Due to the event set-up whereby we had hosts, non-attending users and attending 
 
 As viewed by a non-attender:
 
-<img src="src/assets/no-comment.png" width="500">
+<img src="src/assets/no-comment.png" width="800">
 
 
-Once a user had been accepted into an event or if they are the event host the event page itself is then displayed differently to them. They can add tags, comment and see private details.
+Once a user had been accepted into an event or if they are the event host the event page itself is then displayed differently to them. They can add tags, comment and see private details:
 
-<img src="src/assets/commenting.png" width="500">
+<img src="src/assets/commenting.png" width=800">
 
 **Tags and Interests**
 
 Each user and each event has a tags and interests array respectively. It is this that allows us to filter events but it also gives us the potential to be able to match users to events and to each other based on these matching interests.
 
-
-<img src="src/assets/filtered-events.png" width="500">
+<img src="src/assets/filtered-events.png" width="800">
 
 Which leads nicely to..
 
 **Future additions and improvements**
 
-Aside from the things already covered, the area upon which I would like to build is the social side of the site. I would like to add functionality so that users might like events whether they wish to attend or now. The idea being that we can get to know users very well if we keep track of the events they like and those they attend. As we would collect the "tags" associated with the events as the user interacted with them.
+Aside from the things already covered, the area upon which I would like to build is the social side of the site. I would like to add functionality so that users might like events whether they wish to attend or not. The idea being that we can get to know users very well if we keep track of the events they like and those they attend. As we would collect the "tags" associated with the events as the user interacted with them.
 
 With a large event and user base it would then be possible to match people based on their likes and interests, with both events and each other.
 
