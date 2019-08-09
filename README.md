@@ -162,7 +162,7 @@ The Frontend
 
 We wanted the app to act as platform via which people could not only find events but also find friends, the idea being though that the emphasis is very much on platonic friendship. We therefore chose not to allow users to upload photos but instead had them choose an avatar.
 
-<img src="src/assets/avatar-pick.png" width="400">
+<img src="src/assets/avatar-pick.png" width="600">
 
 
 
@@ -173,7 +173,7 @@ We wanted the app to act as platform via which people could not only find events
 One of the biggest challenges was in displaying user messages/requests to users on their own profile, differentiating between the two private message types and allowing the user to respond accordingly, thus deleting the message and sending an acceptance to the guest.
 
 
-<img src="src/assets/example-profile.png" width="400">
+<img src="src/assets/example-profile.png" width="800">
 
 This was the message schema, as can be seen here requests and other private messages were just variants of this same schema.
 
@@ -190,7 +190,7 @@ const privateMessageSchema = new mongoose.Schema({
 
 ```
 
- <img src="src/assets/request-accepted.png" width="400">
+ <img src="src/assets/request-accepted.png" width="500">
 
 
  I have already referenced the backend functions involved in the process of accepting a user as an attendee of an event. The snapshot of code below shows how the messages were filtered.
@@ -217,12 +217,12 @@ Due to the event set-up whereby we had hosts, non-attending users and attending 
 
 As viewed by a non-attender:
 
-<img src="src/assets/no-comment.png" width="800">
+<img src="src/assets/no-comment.png" width="500">
 
 
 Once a user had been accepted into an event or if they are the event host the event page itself is then displayed differently to them. They can add tags, comment and see private details:
 
-<img src="src/assets/commenting.png" width=800">
+<img src="src/assets/commenting.png" width=500">
 
 **Tags and Interests**
 
