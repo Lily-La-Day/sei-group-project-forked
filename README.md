@@ -59,7 +59,7 @@ $ yarn seed
 
 
 
-### Overview
+### Overview and User Experience
 
 Once registered and logged in:
 
@@ -80,11 +80,73 @@ They can also:
 * They can also add tags to their own event.
 * Can comment on their own event.
 
+We wanted the app to act as platform via which people could not only find events but also find friends, the idea being though that the emphasis is very much on platonic friendship. We therefore chose not to allow users to upload photos but instead had them choose an avatar.
+
+<img src="src/assets/avatar-pick.png" width="600">
+
 ### The Process
 
-I was responsible for the majority of the backend and most of the frontend components other than those that made up the create event form while my team mates concentrated on the (very large and complicated) event create form, the styling and thorough testing.
+I was responsible for the majority of the back-end and most of the frontend components other than those that made up the create event form while my team mates concentrated on the (very large and complicated) event create form, the styling and thorough testing.
 
-### The Backend
+
+#### Challenges
+
+**Viewing Messages/Requests and Responding**
+
+
+One of the biggest challenges was in displaying user messages/requests to users on their own profile, differentiating between the two private message types and allowing the user to respond accordingly, thus deleting the message and sending an acceptance to the guest.
+
+
+<img src="src/assets/example-profile.png" width="800">
+
+This was the message schema, as can be seen here requests and other private messages were just variants of this same schema.
+
+```js
+const privateMessageSchema = new mongoose.Schema({
+  text: { type: String },
+  read: { type: Boolean, default: false },
+  request: { type: Boolean, default: false },
+  requestEvent: { type: mongoose.Schema.ObjectId },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
+})
+
+```
+
+ <img src="src/assets/request-accepted.png" width="500">
+
+
+ I have already referenced the backend functions involved in the process of accepting a user as an attendee of an event. The snapshot of code below shows how the messages were filtered.
+
+```js
+
+                {user.privateMessages.forEach(message => (
+                  <p key ={message._id} > {message} </p> ))}
+                <p> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </p>
+                <button className="buttonEvent" onClick={this.requestFunction}>See Requests</button>
+
+                {this.state.requests && user.privateMessages.filter(message => message.request === true).map((request, i) =>
+                  <Request key={i}
+                    request={request}
+                    user={user}
+                    getEventData={this.getData}
+                    toggleRequests={this.requestFunction}
+                  />
+                )}
+
+```
+
+Due to the event set-up whereby we had hosts, non-attending users and attending users it was necessary to use a lot of conditional rendering.
+
+As viewed by a non-attender:
+
+<img src="src/assets/no-comment.png" width="500">
+
+
+Once a user had been accepted into an event or if they are the event host the event page itself is then displayed differently to them. They can add tags, comment and see private details:
+
+<img src="https://raw.githubusercontent.com/Lily-La-Day/sei-group-project-forked/master/src/assets/commenting.png" width="500">
 
 We had two core models, events and users. The event schema had many fields, most of which were optional as we wanted to allow users as much flexibility as possible when creating events.
 
@@ -156,81 +218,19 @@ function attendingUsers(req, res) {
 }
 ```
 
-The Frontend
-
-**User Experience**
-
-We wanted the app to act as platform via which people could not only find events but also find friends, the idea being though that the emphasis is very much on platonic friendship. We therefore chose not to allow users to upload photos but instead had them choose an avatar.
-
-<img src="src/assets/avatar-pick.png" width="600">
 
 
 
-**Viewing Messages/Requests and Responding**
-
-
-
-One of the biggest challenges was in displaying user messages/requests to users on their own profile, differentiating between the two private message types and allowing the user to respond accordingly, thus deleting the message and sending an acceptance to the guest.
-
-
-<img src="src/assets/example-profile.png" width="800">
-
-This was the message schema, as can be seen here requests and other private messages were just variants of this same schema.
-
-```js
-const privateMessageSchema = new mongoose.Schema({
-  text: { type: String },
-  read: { type: Boolean, default: false },
-  request: { type: Boolean, default: false },
-  requestEvent: { type: mongoose.Schema.ObjectId },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
-}, {
-  timestamps: true
-})
-
-```
-
- <img src="src/assets/request-accepted.png" width="500">
-
-
- I have already referenced the backend functions involved in the process of accepting a user as an attendee of an event. The snapshot of code below shows how the messages were filtered.
-
-```js
-
-                {user.privateMessages.forEach(message => (
-                  <p key ={message._id} > {message} </p> ))}
-                <p> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </p>
-                <button className="buttonEvent" onClick={this.requestFunction}>See Requests</button>
-
-                {this.state.requests && user.privateMessages.filter(message => message.request === true).map((request, i) =>
-                  <Request key={i}
-                    request={request}
-                    user={user}
-                    getEventData={this.getData}
-                    toggleRequests={this.requestFunction}
-                  />
-                )}
-
-```
-
-Due to the event set-up whereby we had hosts, non-attending users and attending users it was necessary to use a lot of conditional rendering.
-
-As viewed by a non-attender:
-
-<img src="src/assets/no-comment.png" width="500">
-
-
-Once a user had been accepted into an event or if they are the event host the event page itself is then displayed differently to them. They can add tags, comment and see private details:
-
-<img src="src/assets/commenting.png" width=500">
+### Wins and Key Learnings
 
 **Tags and Interests**
 
-Each user and each event has a tags and interests array respectively. It is this that allows us to filter events but it also gives us the potential to be able to match users to events and to each other based on these matching interests.
+Each user and each event has a tags and interests array respectively. It is this that allows us to filter events but it also gives us the potential to be able to match users to events and to each other based on these matching interests. I was very happy to have implemented this functionality (slightly at the last minute!) as it give us a lot of potential for futher additions.
 
 <img src="src/assets/filtered-events.png" width="800">
 
-Which leads nicely to..
+I learnt a lot over the course of this project and felt by the end that I had reached a really positive level of familiarity with the technologies involved and the processes involved in developing all parts of a full-stack MERN application. I found the Mongoose documentation particularly interesting and am excited to explore it further and to see what else is possible now that I have this solid foundation from which to learn more. This project gave me such an insight into how exciting database creating and manipulation can be and it has really sparked an interest in back-end development. 
+
 
 **Future additions and improvements**
 
@@ -239,3 +239,4 @@ Aside from the things already covered, the area upon which I would like to build
 With a large event and user base it would then be possible to match people based on their likes and interests, with both events and each other.
 
 I do also recognise that my code is very messy in some places and I would very much like to go back through each component and refactor, re-format and deconstruct where possible.
+
