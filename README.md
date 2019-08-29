@@ -232,7 +232,7 @@ Each user and each event has a tags and interests array respectively. It is this
 I learnt a lot over the course of this project and felt by the end that I had reached a really positive level of familiarity with the technologies involved and the processes involved in developing all parts of a full-stack MERN application. I found the Mongoose documentation particularly interesting and am excited to explore it further and to see what else is possible now that I have this solid foundation from which to learn more. This project gave me such an insight into how exciting database creating and manipulation can be and it has really sparked an interest in back-end development. 
 
 
-**Future additions and improvements**
+#### Future additions and Improvements
 
 Aside from the things already covered, the area upon which I would like to build is the social side of the site. I would like to add functionality so that users might like events whether they wish to attend or not. The idea being that we can get to know users very well if we keep track of the events they like and those they attend. As we would collect the "tags" associated with the events as the user interacted with them.
 
