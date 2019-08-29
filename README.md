@@ -150,6 +150,8 @@ Once a user had been accepted into an event or if they are the event host the ev
 
 We had two core models, events and users. The event schema had many fields, most of which were optional as we wanted to allow users as much flexibility as possible when creating events.
 
+**MapBox and LngLat**
+
 I enjoyed exploring the Mongoose documentation and was very happy to discover that is was possible to use functions as values with in the schema. I took advantage of this in order to allow users to enter a London Borough as a location that would then be converted in to a LngLat co-ordinate in order to be used by the Mapbox API.
 
 While I usually love a good function, creating the one used to achieve this was not a very love-able experience due to the sheer tedium of having to copy 32 co-ordinates as strings (as input and output data types had to be the same), matching them to the corresponding boroughs.
